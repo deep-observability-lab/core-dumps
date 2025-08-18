@@ -1,11 +1,12 @@
+## What is a Core Dump?
 
-## Why bother with core dumps if we can “just debug”?
+A **core dump** is a special file created by the operating system when a program crashes or is explicitly instructed to dump its memory.  
+It contains a snapshot of the program’s memory, processor registers, and execution state at the moment of failure.
 
-Live debugging is great—**when the bug is reproducible under a debugger** and **on your machine**. Core dumps are for **post‑mortem** analysis:
-
-- The process crashed in prod at 03:00? You can **inspect the exact memory/register state after the crash** later.
-- You can debug **without** pausing a live service.
-- You get **stack traces, variable values, thread states** at the moment of failure—no time machine required.
+This information is extremely valuable for:
+- **Debugging crashes**: You can open the dump in a debugger like `gdb` to see the call stack, variables, and cause of the crash.
+- **Post-mortem analysis**: Instead of rerunning the faulty program, developers can analyze the exact crash state offline.
+- **Production systems**: Core dumps allow debugging without attaching `gdb` to a live system or reproducing the crash.
 
 ---
 ## Generating Core Dumps 

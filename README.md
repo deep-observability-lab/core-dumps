@@ -37,6 +37,12 @@ ulimit -c
 result : 
 ![setting core dump size ](./images/core_limit.png)
 
+To enable unlimited core dumps system-wide using /etc/security/limits.conf, add:
+```bash
+echo "* soft core unlimited" | sudo tee -a /etc/security/limits.conf
+```
+This applies persistently across reboots and affects all processes for all users, overriding per-session ulimit settings.
+
 ---
 ### 1) When are core dumps generated?
 

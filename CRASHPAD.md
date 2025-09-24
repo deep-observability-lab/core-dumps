@@ -97,7 +97,7 @@ Each file is a `.dmp`. To inspect:
 ```bash
 dump_syms example_cpp > example_cpp.sym
 ```
-2. - **Organize symbols** into the right folder structure (`./symbols/<binary_id>/`).
+2.  **Organize symbols** into the right folder structure (`./symbols/<binary_id>/`).
 3. **Stack walk the dump**:
 ```bash
 minidump_stackwalk ./db/completed/<dumpfile>.dmp ./symbols/

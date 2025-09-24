@@ -93,15 +93,15 @@ After running any example, Crashpad saves dumps in:
 ./db/pending/
 ```
 Each file is a `.dmp`. To inspect:
-1. **Create symbol files** (using `dump_syms` from Breakpad):
+1. **Create symbol files** (using `dump_syms` from Breakpad):	
 ```bash
-	dump_syms example_cpp > example_cpp.sym
-	```
+dump_syms example_cpp > example_cpp.sym
+```
 2. - **Organize symbols** into the right folder structure (`./symbols/<binary_id>/`).
 3. **Stack walk the dump**:
 ```bash
-	minidump_stackwalk ./db/completed/<dumpfile>.dmp ./symbols/
-	```
+minidump_stackwalk ./db/completed/<dumpfile>.dmp ./symbols/
+```
 This prints a human-readable backtrace with source file names and line numbers.
 
 ---
